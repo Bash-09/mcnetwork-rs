@@ -817,10 +817,10 @@ pub fn decode_packet_clientbound(packet: &[u8], state: &ServerState) -> Result<P
     })
 }
 
+/// Encodes a packet into a vec of bytes
+/// This only encodes the data and type signature of a packet, it is still left to compress/encrypt and length-sign the packet before sending it to a client/server.
 pub fn encode<P: Packet>(packet: P) -> Vec<u8> {
     let mut out = Vec::new();
-
     packet.write(&mut out).unwrap();
-
     out
 }
