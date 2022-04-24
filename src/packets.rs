@@ -66,7 +66,7 @@ pub struct TeleportConfirm { // Status response
 
 #[derive(Debug, Clone)]
 #[derive_packet(0x01)]
-pub struct Ping {
+pub struct StatusPing {
     pub payload: i64,
 }
 
